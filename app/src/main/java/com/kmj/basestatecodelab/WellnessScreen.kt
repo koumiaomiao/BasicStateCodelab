@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.toMutableStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.kmj.basestatecodelab.ui.theme.BaseStateCodelabTheme
@@ -13,7 +15,9 @@ import com.kmj.basestatecodelab.ui.theme.BaseStateCodelabTheme
 fun WellnessScreen(modifier: Modifier = Modifier) {
     Column(modifier) {
         StatefulCounter()
-        WellnessTasksList()
+
+        val list = remember { getWellnessTasks().toMutableStateList() }
+        WellnessTasksList(list, { task -> list.remove(task) })
     }
 }
 
