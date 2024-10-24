@@ -1,5 +1,6 @@
 package com.kmj.basestatecodelab
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -10,7 +11,10 @@ import com.kmj.basestatecodelab.ui.theme.BaseStateCodelabTheme
 
 @Composable
 fun WellnessScreen(modifier: Modifier = Modifier) {
-    StatefulCounter(modifier)
+    Column(modifier) {
+        StatefulCounter()
+        WellnessTasksList()
+    }
 }
 
 @Preview
