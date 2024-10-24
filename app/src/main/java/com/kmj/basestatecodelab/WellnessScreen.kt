@@ -10,7 +10,7 @@ import com.kmj.basestatecodelab.ui.theme.BaseStateCodelabTheme
 
 @Composable
 fun WellnessScreen(modifier: Modifier = Modifier) {
-    WaterCounter(modifier)
+    StatefulCounter(modifier)
 }
 
 @Preview
